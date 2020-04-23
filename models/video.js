@@ -6,7 +6,8 @@ module.exports = (sequelize, DataTypes) => {
 
   Video.init({
     name: DataTypes.STRING,
-    genre: DataTypes.STRING
+    sinopsis: DataTypes.STRING,
+    GenreId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName:'Video'
@@ -14,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Video.associate = function(models) {
     Video.belongsToMany(models.Customer, {through:'CustomerVideos'})
+    Video.belongsTo(models.Genre, { foreignkey: 'GenreId', targetkey: 'id'})
   };
   return Video;
 };

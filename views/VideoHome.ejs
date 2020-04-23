@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+</head>
+<body>
+    <h1>Video</h1>
+    <a href="/videos/add">Add Video</a>
+    <form action="" method="post">
+        <input type="text" name="search" placeholder="Looking? try to type here">
+        <input type="button" value="clear" name="search">
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <td>Title</td>
+                <td>Genre</td>
+                <td>Synopsis</td>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let i = 0; i < data.length ; i++) { %>
+            <tr>
+                <td><%= data[i].name %></td>
+                <td><a href="/videos/<%= data[i].GenreId %>/bygenre"><%= data[i].Genre.name %></a></td>
+                <td><%= data[i].sinopsis %></td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+</html>
