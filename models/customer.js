@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   })
 
   Customer.associate = function(models) {
-    Customer.belongToMany(models.Video, {through: 'CustomerVideos'})
+    Customer.belongsToMany(models.Video, {through: 'CustomerVideos'})
   };
   return Customer;
 };
