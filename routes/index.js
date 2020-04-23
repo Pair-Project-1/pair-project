@@ -9,6 +9,6 @@ router.get('/', (req, res) => {
 })
 router.use('/input', inputRouter)
 router.use('/user', userRouter)
-routes.use('/videos', videoRouter);
+router.use('/videos', videoRouter);
 
 module.exports = router
