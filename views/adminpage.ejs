@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+</head>
+<body>
+    <h1>List Renter</h1>
+    <p><a href="/input/logout">logout</a></p>
+    <p>Video</p>
+    <table border>
+        <tr>
+            <td>Name</td>
+            <td>Email</td>
+            <td>age</td>
+            <td>Action</td>
+        </tr>
+        <% for(let i = 0; i < data.length; i++){ %>
+        <tr>
+            <td><%= data[i].fullname() %></td>
+            <td><%= data[i].email %></td>
+            <td>isi age buat helper dulu</td>
+            <td>rented |
+                <a href="/user/admin/delete/<%= data[i].id %>">remove</a></td>
+        </tr>
+        <% } %>
+    </table>
+</body>
+</html>

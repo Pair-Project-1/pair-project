@@ -14,8 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'CustomerVideo'
   })
 
-  const CustomerVideo = sequelize.define('CustomerVideo', {
-  }, {});
   CustomerVideo.associate = function(models) {
     CustomerVideo.belongsTo(models.Video)
     CustomerVideo.belongsTo(models.Customer)

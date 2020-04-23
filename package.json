@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/Pair-Project-1/pair-project#readme",
   "dependencies": {
+    "bcrypt": "^4.0.1",
     "ejs": "^3.0.2",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "pg": "^8.0.2",
     "sequelize": "^5.21.6",
     "sequelize-cli": "^5.5.1"
