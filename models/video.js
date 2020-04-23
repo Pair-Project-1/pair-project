@@ -6,16 +6,16 @@ module.exports = (sequelize, DataTypes) => {
 
   Video.init({
     name: DataTypes.STRING,
-    genre: DataTypes.STRING
+    sinopsis: DataTypes.STRING,
+    GenreId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName:'Video'
   })
 
-  const Video = sequelize.define('Video', {
-  }, {});
   Video.associate = function(models) {
-    Video.belogsToMany(models.Customer, {through:'CustomerVideos'})
+    Video.belongsToMany(models.Customer, {through:'CustomerVideos'})
+    Video.belongsTo(models.Genre, { foreignkey: 'GenreId', targetkey: 'id'})
   };
   return Video;
 };
