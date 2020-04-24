@@ -12,10 +12,30 @@ module.exports = (sequelize, DataTypes) => {
   }
 
   Customer.init({
-    first_name: DataTypes.STRING,
-    last_name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    birth_year: DataTypes.INTEGER,
+    first_name: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true
+      }
+    },
+    last_name: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true
+      }
+    },
+    birth_year: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true
+      }
+    },
     username: {
       type: DataTypes.STRING,
       validate: {

@@ -28,7 +28,7 @@ class UserController{
 
     static logout(req, res){
         delete req.session.isLogin
-        res.redirect('/input/login')
+        res.redirect('/')
     }
 
     static registerForm(req, res){
