@@ -13,25 +13,30 @@
     <p><a style="text-decoration: none;" href="/input/logout">logout</a></p>
     <form action="" method="post">
         <input type="text" name="search" placeholder="Looking? try to type here">
-        <input type="button" value="clear" name="search">
     </form>
-    <table border>
-        <thead>
-            <tr>
-                <td>Title</td>
-                <td>Genre</td>
-                <td>Synopsis</td>
-            </tr>
-        </thead>
-        <tbody>
-            <% for (let i = 0; i < data.length ; i++) { %>
-            <tr>
-                <td><%= data[i].name %></td>
-                <td><a href="/videos/<%= data[i].GenreId %>/bygenre"><%= data[i].Genre.name %></a></td>
-                <td><%= data[i].sinopsis %></td>
-            </tr>
-            <% } %>
-        </tbody>
-    </table>
+    <form action="/rent/checkout" method="post">
+        <table>
+            <thead>
+                <tr>
+                    <td>Title</td>
+                    <td>Genre</td>
+                    <td>Synopsis</td>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let i = 0; i < data.length ; i++) { %>
+                <tr>
+                    <td><%= data[i].name %></td>
+                    <td><a href="/videos/<%= data[i].GenreId %>/bygenre"><%= data[i].Genre.name %></a></td>
+                    <td><%= data[i].sinopsis %></td>
+                    <td>
+                        <input type="checkbox" name="videos" value="<%= data[i].id %>">
+                    </td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+        <input type="submit" value="rent selected videos">
+    </form>
 </body>
 </html>

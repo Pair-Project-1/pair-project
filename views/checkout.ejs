@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+</head>
+<body>
+    <h1>CheckOut</h1>
+    <table>
+        <tr>
+            <td>Video Name</td>
+        </tr>
+        <% for (let i = 0 ; i < data.length ; i++) { %>
+        <tr>
+            <td><%= data[i].name %></td>
+        </tr>
+        <% } %>
+    </table><br>
+    [nama customer] <input type="submit" value="finish">
+</body>
+</html>
