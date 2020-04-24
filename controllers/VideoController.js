@@ -6,7 +6,9 @@ const { Op } = require("sequelize");
 class VideoController {
     static showVideo(req, res) {
         Video.findAll({include: Genre})
-         .then((data) => res.render('../views/VideoHome.ejs', {data}))
+         .then((data) => {
+             res.render('../views/VideoHome.ejs', {data:data})
+            })
          .catch((err) => res.send(err.stack))
     }
 

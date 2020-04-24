@@ -8,6 +8,9 @@ const rentRouter = require('./rent');
 router.get('/', (req, res) => {
     res.render('home')
 })
+router.get('/home', (req, res) => {
+    res.render('homeAfter')
+})
 router.use('/input', inputRouter)
 router.use('/user', userRouter)
 router.use('/videos', videoRouter);
