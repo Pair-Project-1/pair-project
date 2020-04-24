@@ -1,4 +1,7 @@
 'use strict';
+
+const {transporter, mailOption} = require('../helper/generateEmail')
+
 module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.Sequelize.Model
 
@@ -11,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     VideoId: DataTypes.INTEGER
   }, {
     sequelize,
+    // hooks: {
+    //   afterCreate: (rent) => {
+        
+    //   }
+    // },
     modelName: 'CustomerVideo'
   })
 

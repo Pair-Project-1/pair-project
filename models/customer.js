@@ -16,8 +16,24 @@ module.exports = (sequelize, DataTypes) => {
     last_name: DataTypes.STRING,
     email: DataTypes.STRING,
     birth_year: DataTypes.INTEGER,
-    username: DataTypes.STRING,
-    password: DataTypes.STRING,
+    username: {
+      type: DataTypes.STRING,
+      validate: {
+        len: {
+          args: [6,10],
+          msg: 'username must be 6 to 10 characters'
+        }
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      validate: {
+        len: {
+          args: [6,10],
+          msg: 'password must be 6 to 10 characters'
+        }
+      }
+    },
     level: DataTypes.STRING
   },{
     sequelize,

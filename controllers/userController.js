@@ -10,11 +10,11 @@ class UserController{
 
     static login(req, res){
         const {username, password} = req.body
-        Customer.findOne({where: {username}})
+        Customer.findOne({where: {username, level:'Admin'}})
             .then(data => {
                 if(compare(password, data.password)){
                     req.session.isLogin = true
-                    res.redirect('/user/admin/page')
+                    res.redirect('/home')
                 } else {
                     req.session.error = `invalid username or password`
                     res.redirect('/input/login')

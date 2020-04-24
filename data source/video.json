@@ -1,14 +1,14 @@
 [
     {
         "name" : "Bleach",
-        "genre" : "Anime"
+        "sinopsis" : "Anime"
     },
     {
         "name" : "Midsommar",
-        "genre" : "Thriller"
+        "sinopsis" : "Thriller"
     },
     {
         "name" : "The Avengers",
-        "genre" : "Action"
+        "sinopsis" : "Action"
     }
 ]
